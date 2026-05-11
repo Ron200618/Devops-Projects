@@ -1,0 +1,13 @@
+- name: Deploy to DigitalOcean
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/projects/devops-resume
+            git pull origin main
+            docker build -t resume-app .
+            docker stop my-resume || true
+            docker rm my-resume || true
+            docker run -d -p 8080:80 --name my-resume resume-app
