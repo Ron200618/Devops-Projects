@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.SSH_SMT }}
           script: |
             # Navigate to the project folder
-            cd ~/projects/devops-resume
+            cd ~/projects/Devops-Projects
             
             # Pull the latest code from GitHub
             git pull origin main
