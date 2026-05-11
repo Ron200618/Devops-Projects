@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>DevOps Journey - [Your Name]</title>
+        <style>
+            body { font-family: sans-serif; background: #f4f4f4; text-align: center; padding: 50px; }
+            .card { background: white; padding: 20px; border-radius: 10px; shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h1>DevOps Engineer in Training</h1>
+            <p>Based in Tallinn, Estonia</p>
+            <p>Status: Updating the in github right now CI/CD & Docker</p>
+        </div>
+    </body>
+    </html>
+    ```
+
+## Step 3: The Dockerfile (The "Universal Language")
+Now we package that app so it runs the same on your laptop as it will on DigitalOcean. 
+
+**Task:** Create a file named `Dockerfile` (no extension) in the same folder. Copy this in:
+
+```dockerfile
+# Use a lightweight web server as the base
+FROM nginx:alpine
+
+# Copy our HTML file into the folder Nginx uses to serve content
+COPY index.html /usr/share/nginx/html/index.html
+
+# Expose port 80 so we can see the site
+EXPOSE 80
