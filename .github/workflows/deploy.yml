@@ -17,7 +17,7 @@ jobs:
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_SMT }}
           script: |
             # Navigate to the project folder
             cd ~/projects/devops-resume
