@@ -53,4 +53,9 @@ SSH Identity Management: Successfully configured SSH-agent and private key authe
 
   <img width="423" height="623" alt="Screenshot 2026-05-14 at 07 24 25" src="https://github.com/user-attachments/assets/289eaab9-45ab-476f-8bf9-cd801b83040c" />
 
+<img width="658" height="754" alt="Screenshot 2026-05-14 at 07 25 31" src="https://github.com/user-attachments/assets/2854b83e-970d-40b2-b3f1-f1649bb2b276" />
+
+<img width="423" height="623" alt="Screenshot 2026-05-14 at 07 25 14" src="https://github.com/user-attachments/assets/9ba5ba65-7dea-49f2-ac90-71a25c3f551e" />
+
+
 
