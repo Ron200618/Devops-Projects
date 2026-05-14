@@ -43,3 +43,14 @@ SSH Identity Management: Successfully configured SSH-agent and private key authe
 [x] Next: Implement HTTPS/SSL with Let's Encrypt
 
 [x] Next: Basic Monitoring/Health Checks
+
+
+
+<img width="1172" height="545" alt="Screenshot 2026-05-14 at 07 21 30" src="https://github.com/user-attachments/assets/fae41bd5-b17c-4a31-9ba5-de15b0786eda" />
+
+
+  <img width="898" height="545" alt="Screenshot 2026-05-14 at 07 23 34" src="https://github.com/user-attachments/assets/a70440ec-63b7-479b-8196-67789501925a" />
+
+  <img width="423" height="623" alt="Screenshot 2026-05-14 at 07 24 25" src="https://github.com/user-attachments/assets/289eaab9-45ab-476f-8bf9-cd801b83040c" />
+
+
