@@ -42,4 +42,4 @@ SSH Identity Management: Successfully configured SSH-agent and private key authe
 
 [x] Next: Implement HTTPS/SSL with Let's Encrypt
 
-[ ] Next: Basic Monitoring/Health Checks
+[x] Next: Basic Monitoring/Health Checks
