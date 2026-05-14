@@ -38,7 +38,7 @@ SSH Identity Management: Successfully configured SSH-agent and private key authe
 
 [x] Port 80 Production Deployment
 
-[ ] Next: Add a Custom Domain Name via DNS
+[x] Custom Domain Name via DNS (ron-devops.tech)
 
 [ ] Next: Implement HTTPS/SSL with Let's Encrypt
 
