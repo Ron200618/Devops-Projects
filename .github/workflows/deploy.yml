@@ -33,4 +33,4 @@ jobs:
             docker rm my-resume || true
             
             # Run the updated container
-            docker run -d --restart always -p 80:80 --name my-resume resume-app
+            docker run -d --restart always -p 8081:80 --name my-resume resume-app
