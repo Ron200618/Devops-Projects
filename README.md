@@ -40,6 +40,6 @@ SSH Identity Management: Successfully configured SSH-agent and private key authe
 
 [x] Custom Domain Name via DNS (ron-devops.tech)
 
-[ ] Next: Implement HTTPS/SSL with Let's Encrypt
+[x] Next: Implement HTTPS/SSL with Let's Encrypt
 
 [ ] Next: Basic Monitoring/Health Checks
