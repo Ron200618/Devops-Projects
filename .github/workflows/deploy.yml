@@ -1,36 +1,38 @@
-name: Deploy Resume
+name: Deploy to Production
 
 on:
   push:
-    branches:
-      - main  # Trigger only when pushing to main
+    branches: [ master ]
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          pip install -r site-monitor/requirements.txt
+      - name: Lint with flake8
+        run: |
+          pip install flake8
+          # peatab ehituse, kui on süntaksivead
+          flake8 site-monitor/main.py --count --select=E9,F63,F7,F82 --show-source --statistics
 
-      - name: SSH and Deploy
+  deploy:
+    needs: test  # SEE ON OLULINE: deploy ei alga, kui test ebaõnnestub!
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_SMT }}
+          host: ${{ secrets.SERVER_HOST }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Navigate to the project folder
-            cd ~/projects/Devops-Projects
-            
-            # Pull the latest code from GitHub
-            git pull origin main
-            
-            # Rebuild the container with the new code
-            docker build -t resume-app .
-            
-            # Stop and remove the old container
-            docker stop my-resume || true
-            docker rm my-resume || true
-            
-            # Run the updated container
-            docker run -d --restart always -p 8081:80 --name my-resume resume-app
+            cd ~/projects
+            git pull origin master
+            docker compose up -d --build
