@@ -57,5 +57,23 @@ SSH Identity Management: Successfully configured SSH-agent and private key authe
 
 <img width="423" height="623" alt="Screenshot 2026-05-14 at 07 25 14" src="https://github.com/user-attachments/assets/9ba5ba65-7dea-49f2-ac90-71a25c3f551e" />
 
+```mermaid
+graph LR
+    subgraph GitHub
+    A[Source Code] --> B[GitHub Actions]
+    end
+
+    B -- SSH Deploy --> C[DigitalOcean Droplet]
+
+    subgraph Server
+    C --> D[Nginx Proxy Manager]
+    D -- Internal Proxy --> E[Docker: Resume Container]
+    end
+
+    subgraph Observability
+    F[DigitalOcean Uptime] -.-> D
+    end
+
+    User((User)) -->|HTTPS| D
 
 
